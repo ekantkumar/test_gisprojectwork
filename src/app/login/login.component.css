@@ -1,0 +1,114 @@
+/* .login-container {
+  width: 350px;
+  margin: 100px auto;
+  padding: 30px;
+  background-color: #f8f9fa;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+
+form h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #2a6db4;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #2a6db4;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #205ea3;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+} */
+
+
+
+
+
+        body {
+            font-family: Calibri, Helvetica, sans-serif;
+            background:  no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+          
+        }
+
+        .container {
+            max-width: 400px;
+            width: 100%;
+            background-color: rgb(99, 150, 172);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-control-fixed {
+            height: 50px;
+            box-sizing: border-box;
+        }
+
+        .btn-custom {
+            background-color: #226d7e;
+            color: #ffffff;
+        }
+
+        .btn-custom:hover {
+            background-color: #1d5b64;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            color: #ffffff;
+        }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+
+        .form-check-label {
+            margin-bottom: 0;
+        }
+
+        .error-message {
+            color: red;
+            font-weight: bold;
+        }
+   

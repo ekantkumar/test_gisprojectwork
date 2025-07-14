@@ -1,0 +1,101 @@
+
+<div class="dashboard-container">
+  <h2>DASHBOARD</h2>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="region">Region</label>
+      <select id="region" [(ngModel)]="selectedRegion" (change)="onRegionChange()">
+        <option value="" disabled selected>Select Region</option>
+        <option *ngFor="let region of regions" [value]="region">{{ regionDisplayMap[region] }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="circle">Circle</label>
+      <select id="circle" [(ngModel)]="selectedCircle" (change)="onCircleChange()" [disabled]="!circles.length">
+        <option value="" disabled>Select Circle</option>
+        <option *ngFor="let circle of circles" [value]="circle.circleCode">
+          {{ circle.circleName }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="division">Division</label>
+      <select id="division" [(ngModel)]="selectedDivision" (change)="onDivisionChange()" [disabled]="!divisions.length">
+        <option value="" disabled selected>Select Division</option>
+        <option *ngFor="let division of divisions" [value]="division.divisionCode">
+          {{ division.divisionName }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="dc">Distribution Centre</label>
+      <select id="dc" [(ngModel)]="selectedDC" [disabled]="!dcs.length">
+        <option value="" disabled selected>Select DC</option>
+
+        <option *ngFor="let dc of dcs" [value]="dc.distributionCenterCode">{{ dc.distributionCenterName }}</option>
+      </select>
+    </div>
+
+
+  </div>
+
+  <button class="search-btn" (click)="getdashboard()">Search</button>
+
+  <div class="dashboard-grid">
+    <!-- Feeders Bar Chart -->
+    <div class="dashboard-card">
+      <h3>No. of Feeders</h3>
+      <!-- 👇 Summary -->
+      <!-- <p>33/11 KV S/s: {{ feederSSCount }}</p>
+      <p>33 KV Feeders: {{ feeder33kvCount }}</p>
+      <p>11 KV Feeders: {{ feeder11kvCount }}</p> -->
+
+      <canvas baseChart [data]="feederChartData" [type]="'bar'">
+      </canvas>
+    </div>
+
+    <!-- Line Length Pie Chart -->
+    <div class="dashboard-card">
+      <h3>Length of Electrical Lines in KM</h3>
+      <!-- 👇 Summary -->
+      <!-- <p>33 KV Feeder: {{ lineLength33kv }} km</p>
+      <p>11 KV Feeder: {{ lineLength11kv }} km</p>
+      <p>LT Line: {{ lineLengthLT }} km</p> -->
+      <canvas baseChart [data]="lineChartData" [type]="'pie'">
+      </canvas>
+      <!-- <canvas baseChart [data]="undergroundChartData" [type]="'pie'">
+      </canvas> -->
+
+    </div>
+    <br>
+    <!-- Total Transformers -->
+    <div class="dashboard-card">
+      <h3>Total Transformers</h3>
+      <!-- 👇 Summary -->
+      <!-- <p>Total DTRs: {{totalTransformer }}</p> -->
+      <canvas baseChart [data]="dtrChartData" [type]="'pie'">
+      </canvas>
+    </div>
+
+    <div class="dashboard-card">
+      <h3>Status of JOB</h3>
+      <!-- 👇 Summary -->
+      <!-- <p>Jobs Created: {{ jobCreated }}</p>
+      <p>Jobs Assigned: {{ jobAssigned }}</p>
+      <p>Jobs In Progress: {{ jobInProgress }}</p>
+      <p>Jobs Completed: {{ jobCompleted }}</p> -->
+      <canvas baseChart [data]="jobChartData" [type]="'bar'">
+      </canvas>
+    </div>
+
+  </div>
+  </div>
+
+  <!-- <div class="dashboard-card">
+    <h3>33 KV Feeder</h3>
+    <p>{{ feederChartData.datasets[0].data[1] }} km</p>
+  </div> -->

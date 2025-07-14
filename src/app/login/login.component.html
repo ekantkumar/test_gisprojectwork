@@ -1,0 +1,66 @@
+<!-- <div class="login-container">
+  <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+    <h2>Login</h2>
+
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        [(ngModel)]="username"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        [(ngModel)]="password"
+        required
+      />
+    </div>
+
+    <button type="submit" class="login-btn">Login</button>
+
+    <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+  </form>
+</div>
+ -->
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+    
+</head> 
+<body>
+    <div class="container">
+        <h2 class="text-center mb-4"><b></b></h2>
+      
+        <form (ngSubmit)="onSubmit()"  >
+          <div class="form-group">
+            <label for="userid"><b>Username :</b></label>
+            <input type="text" class="form-control form-control-fixed" id="userid" placeholder="Enter Username" [(ngModel)]="userid" name="userid" required>
+          </div>
+          <div class="form-group">
+            <label for="password"><b>Password</b></label>
+            <input type="password" class="form-control form-control-fixed" id="password" placeholder="Enter Password" [(ngModel)]="password" name="password" required>
+          </div>
+          <br>
+          
+          <button type="submit" class="btn btn-custom btn-block" ><b>Login</b></button>
+          <button type="reset" class="btn btn-secondary btn-block"><b>Reset</b></button>
+          <p class="text-center mt-3"><a href="">Forgot password?</a></p>
+          <!-- <div id="loginError" class="error-message text-center mt-3">{{loginError}}</div> -->
+        </form>
+      </div>
+</body>
+</html>

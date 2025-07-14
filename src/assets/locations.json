@@ -1,0 +1,196 @@
+{
+"Sheet1":[
+ {
+  "S.No.": 1,
+  "NAME OF CIRCLE": "BURHANPUR",
+  "NAME OF SUBSTATION": "LALBAGH GRID",
+  "LATTIITUDE": 21.3312235,
+  "LONGITUDE": 76.204077,
+  "Final\nInjectable": 4
+ },
+ {
+  "S.No.": 2,
+  "NAME OF CIRCLE": "BURHANPUR",
+  "NAME OF SUBSTATION": "AZADNAGAR",
+  "LATTIITUDE": 21.32522843,
+  "LONGITUDE": 76.24293885,
+  "Final\nInjectable": 8
+ },
+ {
+  "S.No.": 3,
+  "NAME OF CIRCLE": "BURHANPUR",
+  "NAME OF SUBSTATION": "NIMBOLA",
+  "LATTIITUDE": 21.36482683,
+  "LONGITUDE": 76.25348058,
+  "Final\nInjectable": 10.52
+ },
+ {
+  "S.No.": 4,
+  "NAME OF CIRCLE": "BURHANPUR",
+  "NAME OF SUBSTATION": "DABHIYAKHEDA",
+  "LATTIITUDE": 21.4737197,
+  "LONGITUDE": 76.5191646,
+  "Final\nInjectable": 8
+ },
+ {
+  "S.No.": 5,
+  "NAME OF CIRCLE": "BURHANPUR",
+  "NAME OF SUBSTATION": "SHEKHPURA",
+  "LATTIITUDE": 21.54805949,
+  "LONGITUDE": 76.73578307,
+  "Final\nInjectable": 4
+ },
+ {
+  "S.No.": 6,
+  "NAME OF CIRCLE": "BURHANPUR",
+  "NAME OF SUBSTATION": "DEDTALAI",
+  "LATTIITUDE": 21.49440314,
+  "LONGITUDE": 76.76564212,
+  "Final\nInjectable": 2.52
+ },
+ {
+  "S.No.": 7,
+  "NAME OF CIRCLE": "BURHANPUR",
+  "NAME OF SUBSTATION": "MANJROD",
+  "LATTIITUDE": 21.41406094,
+  "LONGITUDE": 76.62694387,
+  "Final\nInjectable": 12
+ },
+ {
+  "S.No.": 8,
+  "NAME OF CIRCLE": "BURHANPUR",
+  "NAME OF SUBSTATION": "NIMANDAD",
+  "LATTIITUDE": 21.37049991,
+  "LONGITUDE": 76.59647583,
+  "Final\nInjectable": 4
+ },
+ {
+  "S.No.": 9,
+  "NAME OF CIRCLE": "BURHANPUR",
+  "NAME OF SUBSTATION": "DHULKOT",
+  "LATTIITUDE": 21.4986031,
+  "LONGITUDE": 76.17303056,
+  "Final\nInjectable": 4
+ },
+ {
+  "S.No.": 10,
+  "NAME OF CIRCLE": "BURHANPUR",
+  "NAME OF SUBSTATION": "BORI",
+  "LATTIITUDE": 21.4545433,
+  "LONGITUDE": 76.0968417,
+  "Final\nInjectable": 6.52
+ },
+ {
+  "S.No.": 11,
+  "NAME OF CIRCLE": "BURHANPUR",
+  "NAME OF SUBSTATION": "KHATLA",
+  "LATTIITUDE": 21.54380831,
+  "LONGITUDE": 76.23485774,
+  "Final\nInjectable": 4
+ },
+ {
+  "S.No.": 12,
+  "NAME OF CIRCLE": "BURHANPUR",
+  "NAME OF SUBSTATION": "SAROLA",
+  "LATTIITUDE": 21.34418784,
+  "LONGITUDE": 76.31942262,
+  "Final\nInjectable": 4
+ },
+ {
+  "S.No.": 13,
+  "NAME OF CIRCLE": "BURHANPUR",
+  "NAME OF SUBSTATION": "JASONDI",
+  "LATTIITUDE": 21.21789383,
+  "LONGITUDE": 76.41436298,
+  "Final\nInjectable": 4
+ },
+ {
+  "S.No.": 14,
+  "NAME OF CIRCLE": "BURHANPUR",
+  "NAME OF SUBSTATION": "TALAWADI",
+  "LATTIITUDE": 21.31140333,
+  "LONGITUDE": 76.40745,
+  "Final\nInjectable": 4
+ },
+ {
+  "S.No.": 15,
+  "NAME OF CIRCLE": "BURHANPUR",
+  "NAME OF SUBSTATION": "PHOPNAR",
+  "LATTIITUDE": 21.2385397,
+  "LONGITUDE": 76.3213651,
+  "Final\nInjectable": 8
+ },
+ {
+  "S.No.": 16,
+  "NAME OF CIRCLE": "BURHANPUR",
+  "NAME OF SUBSTATION": "RAIGAON",
+  "LATTIITUDE": 21.23846162,
+  "LONGITUDE": 76.28877927,
+  "Final\nInjectable": 5.04
+ },
+ {
+  "S.No.": 17,
+  "NAME OF CIRCLE": "BURHANPUR",
+  "NAME OF SUBSTATION": "JAINABAD",
+  "LATTIITUDE": 21.2892806,
+  "LONGITUDE": 76.2366317,
+  "Final\nInjectable": 6.52
+ },
+ {
+  "S.No.": 18,
+  "NAME OF CIRCLE": "BURHANPUR",
+  "NAME OF SUBSTATION": "BIRODA",
+  "LATTIITUDE": 21.3061599,
+  "LONGITUDE": 76.138062,
+  "Final\nInjectable": 4
+ },
+ {
+  "S.No.": 19,
+  "NAME OF CIRCLE": "BURHANPUR",
+  "NAME OF SUBSTATION": "LONI",
+  "LATTIITUDE": 21.2918153,
+  "LONGITUDE": 76.175981,
+  "Final\nInjectable": 8
+ },
+ {
+  "S.No.": 20,
+  "NAME OF CIRCLE": "BURHANPUR",
+  "NAME OF SUBSTATION": "ICHHAPUR",
+  "LATTIITUDE": 21.14504123,
+  "LONGITUDE": 76.15684602,
+  "Final\nInjectable": 8
+ },
+ {
+  "S.No.": 21,
+  "NAME OF CIRCLE": "BURHANPUR",
+  "NAME OF SUBSTATION": "SIRSODA",
+  "LATTIITUDE": 21.2576083,
+  "LONGITUDE": 76.1937615,
+  "Final\nInjectable": 4
+ },
+ {
+  "S.No.": 22,
+  "NAME OF CIRCLE": "BURHANPUR",
+  "NAME OF SUBSTATION": "CHAPORA",
+  "LATTIITUDE": 21.1967856,
+  "LONGITUDE": 76.1856637,
+  "Final\nInjectable": 12
+ },
+ {
+  "S.No.": 23,
+  "NAME OF CIRCLE": "BURHANPUR",
+  "NAME OF SUBSTATION": "SHAHPUR",
+  "LATTIITUDE": 21.23439032,
+  "LONGITUDE": 76.23344909,
+  "Final\nInjectable": 10.52
+ },
+ {
+  "S.No.": 24,
+  "NAME OF CIRCLE": "BURHANPUR",
+  "NAME OF SUBSTATION": "KHAMNI",
+  "LATTIITUDE": 21.20796229,
+  "LONGITUDE": 76.27112587,
+  "Final\nInjectable": 8
+ }
+]
+}

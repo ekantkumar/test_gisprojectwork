@@ -1,0 +1,105 @@
+.dashboard-container {
+  max-width: 1480px;
+  margin: 20px auto;
+  padding: 24px;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #333;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.form-group {
+  flex: 1 1 22%;
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+}
+
+label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #555;
+}
+
+select {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.search-btn {
+  margin-top: 20px;
+  margin-left: 520px;
+  width: 10%;
+  padding: 12px;
+  background-color: #2a6db4;
+  border: none;
+  border-radius: 6px;
+  color: rgb(245, 242, 242);
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-btn:hover {
+  background-color: #0056b3;
+}
+
+
+.dashboard-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+.dashboard-card {
+  flex: 1 1 calc(30% - 20px);
+  min-width: 250px;
+  padding: 50px;
+  background: #fafafa;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.dashboard-dtr{
+  flex: 1 1 calc(33% - 20px);
+  min-width: 250px;
+  max-height: 50%;
+  padding: 20px;
+  background: #fafafa;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.transformer-count {
+  font-size: 32px;
+  color: #2c3e50;
+  font-weight: bold;
+  margin-top: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+

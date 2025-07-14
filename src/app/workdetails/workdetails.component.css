@@ -1,0 +1,28 @@
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h5 {
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+button.btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-weight: 600;
+  border-radius: 6px;
+  background-color: #2a6db4;
+  border: none;
+}
+
+button.btn:hover {
+  background-color: #0056b3;
+}
