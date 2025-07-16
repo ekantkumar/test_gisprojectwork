@@ -1,1 +1,101 @@
-<p>feeder33 works!</p>
+<div class="dashboard-container">
+  <h2>33KV FEEDER MAP</h2>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="region">Region</label>
+      <select id="region" [(ngModel)]="selectedRegion" (change)="onRegionChange()">
+        <option value="" disabled >Select Region</option>
+        <option *ngFor="let region of regions" [value]="region">{{ regionDisplayMap[region] }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="circle">Circle</label>
+      <select id="circle" [(ngModel)]="selectedCircle" (change)="onCircleChange()" [disabled]="!circles.length">
+        <option value="" disabled>Select Circle</option>
+        <option *ngFor="let circle of circles" [value]="circle.circleCode">
+          {{ circle.circleName }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="division">Division</label>
+      <select id="division" [(ngModel)]="selectedDivision" (change)="onDivisionChange()" [disabled]="!divisions.length">
+        <option value="" disabled>Select Division</option>
+        <option *ngFor="let division of divisions" [value]="division.divisionCode">
+          {{ division.divisionName }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="dc">DC</label>
+      <select id="dc" [(ngModel)]="selectedDC" [disabled]="!dcs.length">
+        <option value="" disabled>Select DC</option>
+        <option *ngFor="let dc of dcs" [value]="dc.distributionCenterCode">{{ dc.distributionCenterName }}</option>
+      </select>
+    </div>
+ <div class="form-group search-button-group">
+    <label>&nbsp;</label>
+    <button class="search-btn" (click)="getdashboard()">Search</button>
+  </div>
+
+  </div>
+
+
+  <div *ngIf="feederCounts && feederCounts.length > 0" class="table-responsive mt-4">
+
+  <table class="table table-bordered table-hover">
+    <thead class="table-primary">
+      <tr>
+        <th>S.No.</th>
+        <th>Circle Name</th>
+        <th>Division Name</th>
+        <th>33/11 KV S/s Name</th>
+        <th>11 KV Feeder Code</th>
+        <th>11 KV Feeder Name</th>
+        <th>Total No. of DTR</th>
+        <th>Total DTR Capacity in KVA</th>
+        <th>Feeder Length (Existing in KMs)</th>
+        <th>Feeder Length (Proposed in KMs)</th>
+        <th>% Voltage Regulations (VR)</th>
+        <th>Line Loss in KW</th>
+        <th>Line Loss (%)</th>
+        <th>Consumer</th>
+        <th>Map View</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let feeder of feederCounts; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{ feeder.kv_11_circle_name }}</td>
+        <td>{{ feeder.kv_11_division_name }}</td>
+        <td>{{ feeder.kv_11_33_11_ss_name }}</td>
+        <td>{{ feeder.kv_11_feeder_code }}</td>
+        <td>{{ feeder.kv_11_feeder_name }}</td>
+        <td>{{ feeder.kv_11_total_no_of_dtr }}</td>
+        <td>{{ feeder.total_dtr_capacity_in_kva }}</td>
+        <td>{{ feeder.kv_11_feeder_length_in_kms_existing }}</td>
+        <td>{{ feeder.kv_11_feeder_length_in_kms_proposed }}</td>
+        <td>{{ feeder.kv_11_p_voltage_regulations_vr || 'N/A' }}</td>
+        <td>{{ feeder.kv_11_line_loss_in_kw || 'N/A' }}</td>
+        <td>{{ feeder.kv_11_line_loss_p || 'N/A' }}</td>
+        <td>{{ feeder.consumer_count }}</td>
+        <td>
+         
+           <button class="btn btn-primary" (click)="viewMap(feeder)">View Map</button><br>
+           <!-- <button class="btn btn-primary" (click)="addPoleEstimate(feeder)">Add Estimate</button> -->
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+ 
+<div id="map" style="height: 800px; width:100%; margin-top: 20px;"></div>
+   
+</div>
+
