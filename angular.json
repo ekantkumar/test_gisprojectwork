@@ -29,11 +29,10 @@
             ],
             "styles": [
               "src/styles.css",
-              "D:/Angular/PGIS1/node_modules/bootstrap/dist/css/bootstrap.min.css",
-              
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",              
               "node_modules/leaflet/dist/leaflet.css"
             ],
-            "scripts": ["D:/Angular/PGIS1/node_modules/bootstrap/dist/js/bootstrap.min.js"]
+            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.min.js"]
           },
           "configurations": {
             "production": {

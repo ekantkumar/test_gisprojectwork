@@ -84,6 +84,20 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     text-align: center;
   }
+
+
+  .dashboard-container {
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+.responsive-map {
+  height: 70vh;       /* Takes 70% of viewport height */
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
   
   
   

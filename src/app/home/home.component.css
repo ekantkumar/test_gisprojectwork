@@ -1,80 +1,37 @@
-/* Global Styles */
-body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4; /* Light gray background for the entire page */
-}
-
-/* Sidebar Styles */
+/* Sidebar styling */
 .sidebar {
-  width: 250px;
-  height: 100vh;
-  background-color: #479ebb; /* Light blue background for the sidebar */
-  color: rgb(121, 34, 34); /* White text for readability */
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding-top: 20px;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Light shadow on the right */
-}
-
-.sidebar-header {
-  padding: 20px;
-  background-color: #8BB7D1; /* Slightly darker blue for the header */
-  text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.sidebar-list {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sidebar-list li {
-  padding: 15px;
-  text-align: center;
   transition: all 0.3s ease;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Link Styles */
-.sidebar-list li a {
-  display: block;
-  color: rgb(51, 5, 5); /* White text for links */
-  text-decoration: none;
-  font-size: 18px;
-  padding: 10px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+/* Active link styling */
+.active-link {
+  background-color: #0d6efd !important;
+  color: white !important;
+  border-radius: 5px;
 }
 
-/* Active Link Styling */
-.sidebar-list li a.router-link-active {
-  background-color: #235670; /* Darker blue for active links */
-  color: white;
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+  .sidebar {
+    position: fixed;
+    z-index: 1040;
+    width: 250px;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .sidebar.show {
+    transform: translateX(0);
+  }
+  
+  .col-md-10 {
+    width: 100%;
+  }
 }
 
-/* Hover Effect for Links */
-.sidebar-list li a:hover {
-  background-color: #02111d; /* Light blue on hover */
-  color: #43adbb; /* Blue text color on hover */
-}
-
-/* Content Area Styles */
-.content {
-  margin-left: 250px;
-  padding: 20px;
-  background-color: #ffffff; /* White background for content */
-  height: 100vh; /* Ensure content fills screen */
-  overflow-y: auto;
-}
-
-h1 {
-  color: #333; /* Dark text for headings */
-}
-
-p {
-  color: #666; /* Lighter text for paragraphs */
-  font-size: 18px;
-  line-height: 1.6;
+/* Main content transition when sidebar toggles */
+.col-md-10 {
+  transition: all 0.3s ease;
 }

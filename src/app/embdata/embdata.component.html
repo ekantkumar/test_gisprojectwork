@@ -1,45 +1,47 @@
-<div class="dashboard-container">
-    <h2>EMB DATA MAP</h2>
-  
-    <div class="form-row">
-      <div class="form-group">
-        <label for="region">Region</label>
-        <select id="region" [(ngModel)]="selectedRegion" (change)="onRegionChange()">
-          <option value="" disabled selected>Select Region</option>
-          <option *ngFor="let region of regions" [value]="region">{{ regionDisplayMap[region] }}</option>
-        </select>
-      </div>
-  
-      <div class="form-group">
-        <label for="circle">Circle</label>
-        <select id="circle" [(ngModel)]="selectedCircle" (change)="onCircleChange()" [disabled]="!circles.length">
-          <option value="" disabled>Select Circle</option>
-          <option *ngFor="let circle of circles" [value]="circle.circleCode"> {{ circle.circleName }} </option>
-        </select>
-      </div>
-  
-      <div class="form-group">
-        <label for="division">Division</label>
-        <select id="division" [(ngModel)]="selectedDivision" (change)="onDivisionChange()" [disabled]="!divisions.length">
-          <option value="" disabled selected>Select Division</option>
-          <option *ngFor="let division of divisions" [value]="division.divisionCode"> {{ division.divisionName }} </option>
-        </select>
-      </div>
-  
-      <div class="form-group">
-        <label for="dc">DC</label>
-        <select id="dc" [(ngModel)]="selectedDC" [disabled]="!dcs.length">
-          <option value="" disabled selected>Select DC</option>
-  
-          <option *ngFor="let dc of dcs" [value]="dc.code">{{ dc.name }}</option>
-        </select>
-      </div>
+<div class="container-fluid dashboard-container py-3">
+  <h2 class="text-center mb-4">EMB DATA MAP</h2>
 
-  
+  <!-- Filter Row -->
+  <div class="row g-3">
+    <div class="col-sm-6 col-md-3">
+      <label for="region" class="form-label">Region</label>
+      <select id="region" [(ngModel)]="selectedRegion" (change)="onRegionChange()" class="form-select">
+        <option value="" disabled selected>Select Region</option>
+        <option *ngFor="let region of regions" [value]="region">{{ regionDisplayMap[region] }}</option>
+      </select>
     </div>
-  
-    <button class="search-btn" (click)="getdashboard()">Search</button>
 
-   
+    <div class="col-sm-6 col-md-3">
+      <label for="circle" class="form-label">Circle</label>
+      <select id="circle" [(ngModel)]="selectedCircle" (change)="onCircleChange()" [disabled]="!circles.length" class="form-select">
+        <option value="" disabled>Select Circle</option>
+        <option *ngFor="let circle of circles" [value]="circle.circleCode">{{ circle.circleName }}</option>
+      </select>
+    </div>
 
-    <div id="map" style="height: 700px; width: 100%; margin-top: 20px;"></div>
+    <div class="col-sm-6 col-md-3">
+      <label for="division" class="form-label">Division</label>
+      <select id="division" [(ngModel)]="selectedDivision" (change)="onDivisionChange()" [disabled]="!divisions.length" class="form-select">
+        <option value="" disabled selected>Select Division</option>
+        <option *ngFor="let division of divisions" [value]="division.divisionCode">{{ division.divisionName }}</option>
+      </select>
+    </div>
+
+    <div class="col-sm-6 col-md-3">
+      <label for="dc" class="form-label">DC</label>
+      <select id="dc" [(ngModel)]="selectedDC" [disabled]="!dcs.length" class="form-select">
+        <option value="" disabled selected>Select DC</option>
+        <option *ngFor="let dc of dcs" [value]="dc.code">{{ dc.name }}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="text-center my-3">
+    <button class="btn btn-primary px-4" (click)="getdashboard()">Search</button>
+  </div>
+
+  <!-- Map Container -->
+  <div class="map-wrapper">
+    <div id="map" class="responsive-map"></div>
+  </div>
+</div>
