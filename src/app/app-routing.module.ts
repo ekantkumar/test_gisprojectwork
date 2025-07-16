@@ -11,6 +11,8 @@ import { WorkdetailsComponent } from './workdetails/workdetails.component';
 import { EmbdataComponent } from './embdata/embdata.component';
 import { LoginComponent } from './login/login.component';
 import { PoleEstimateUpdateComponent } from './pole-estimate-update/pole-estimate-update.component';
+import { EstimateDetailComponent } from './estimate-detail/estimate-detail.component';
+import { Feeder33Component } from './feeder33/feeder33.component';
 
 
 const routes: Routes = [
@@ -57,6 +59,14 @@ const routes: Routes = [
   {
     path:'app-pole-estimate-update',
     component:PoleEstimateUpdateComponent
+  },
+  {
+    path:'app-estimate-detail',
+    component:EstimateDetailComponent
+  },
+  {
+    path:'app-feeder33',
+    component:Feeder33Component
   }
 
 ];

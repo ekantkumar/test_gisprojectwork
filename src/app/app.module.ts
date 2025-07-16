@@ -21,6 +21,7 @@ import { EmbdataComponent } from './embdata/embdata.component';
 import { LoginComponent } from './login/login.component';
 import { PoleEstimateUpdateComponent } from './pole-estimate-update/pole-estimate-update.component';
 import { Feeder33Component } from './feeder33/feeder33.component';
+import { EstimateDetailComponent } from './estimate-detail/estimate-detail.component';
 
 
 
@@ -41,7 +42,8 @@ import { Feeder33Component } from './feeder33/feeder33.component';
     EmbdataComponent,
     LoginComponent,
     PoleEstimateUpdateComponent,
-    Feeder33Component
+    Feeder33Component,
+    EstimateDetailComponent
   ],
   
   imports: [

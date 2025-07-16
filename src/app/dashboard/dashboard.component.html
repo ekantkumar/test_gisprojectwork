@@ -35,7 +35,6 @@
       <label for="dc">Distribution Centre</label>
       <select id="dc" [(ngModel)]="selectedDC" [disabled]="!dcs.length">
         <option value="" disabled selected>Select DC</option>
-
         <option *ngFor="let dc of dcs" [value]="dc.distributionCenterCode">{{ dc.distributionCenterName }}</option>
       </select>
     </div>
