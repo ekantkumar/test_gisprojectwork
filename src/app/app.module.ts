@@ -5,9 +5,6 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
-import { MaplineComponent } from './mapline/mapline.component';
-import { MapDataService } from './map-data.service';
-import { MaplineApiComponent } from './maplineapi/maplineapi.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule } from '@angular/forms';
 import { NgChartsModule } from 'ng2-charts';
@@ -22,7 +19,9 @@ import { LoginComponent } from './login/login.component';
 import { PoleEstimateUpdateComponent } from './pole-estimate-update/pole-estimate-update.component';
 import { Feeder33Component } from './feeder33/feeder33.component';
 import { EstimateDetailComponent } from './estimate-detail/estimate-detail.component';
-
+import { PoleEstimateUpdate33kvComponent } from './pole-estimate-update33kv/pole-estimate-update33kv.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './auth.interceptor';
 
 
 
@@ -31,8 +30,6 @@ import { EstimateDetailComponent } from './estimate-detail/estimate-detail.compo
   declarations: [
     AppComponent,
     MapComponent,
-    MaplineComponent,
-    MaplineApiComponent,
     DashboardComponent,
     MapdashboardComponent,
     HomeComponent,
@@ -43,7 +40,8 @@ import { EstimateDetailComponent } from './estimate-detail/estimate-detail.compo
     LoginComponent,
     PoleEstimateUpdateComponent,
     Feeder33Component,
-    EstimateDetailComponent
+    EstimateDetailComponent,
+    PoleEstimateUpdate33kvComponent
   ],
   
   imports: [
@@ -55,7 +53,13 @@ import { EstimateDetailComponent } from './estimate-detail/estimate-detail.compo
     NgChartsModule,
     GoogleMapsModule
   ],
-  providers: [MapDataService],
+ providers: [
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

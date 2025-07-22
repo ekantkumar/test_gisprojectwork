@@ -1,11 +1,12 @@
 .dashboard-container {
-  max-width: 100%;
+  max-width: 90%;
   margin: 20px auto;
   padding: 24px;
   background: #ffffff;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   font-family: 'Segoe UI', sans-serif;
+ 
 }
 
 h2 {
@@ -55,10 +56,14 @@ select:focus {
 }
 
 .form-group {
+  padding: 10px;
   flex: 1 1 22%;
   display: flex;
   flex-direction: column;
-  min-width: 180px;
+  min-width: 100px;
+  max-width: 400px;
+   justify-content: center;  /* optional: centers vertically if height allows */
+  text-align: center;
 }
 
 .form-group {

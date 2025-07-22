@@ -1,84 +1,42 @@
-<div class="container-fluid p-0">
-  <div class="row g-0">
-    <!-- Sidebar Toggle Button (Mobile) -->
-    <button class="navbar-toggler d-md-none position-fixed" type="button" (click)="toggleSidebar()" style="z-index: 1050; top: 10px; left: 10px;">
-      <span class="navbar-toggler-icon"></span>
-        <span class="navbar-toggler-icon"></span>
-          <span class="navbar-toggler-icon"></span>
-    </button>
+<!-- Sidebar Layout -->
+<div class="sidebar">
+  <!-- <div class="sidebar-header">
+    MPPKVVCL
+  </div> -->
+  <ul class="sidebar-list"><br><br><br><br>
+    <li><a routerLink="/app-home/app-dashboard" routerLinkActive="active-link"><b>DASHBOARD</b></a></li>
+    <li><a routerLink="/app-home/app-mapdashboard" routerLinkActive="active-link"><b>SUBSTATION MAP</b></a></li>
+    <!-- <li><a routerLink="/app-feeder11" routerLinkActive="active-link"><b>EMB DATA EZ</b></a></li> -->
+    <li><a routerLink="/app-home/app-test" routerLinkActive="active-link"><b>FEEDER MAP (11KV)</b></a></li>
+    <li><a routerLink="/app-home/app-feeder33" routerLinkActive="active-link"><b>FEEDER MAP (33KV)</b></a></li>
+    <li><a routerLink="/app-home/app-workdetails" routerLinkActive="active-link"><b>WORK DETAIL</b></a></li>
+    <li><a routerLink="/app-home/app-embdata" routerLinkActive="active-link"><b>EMB DATA</b></a></li>
+    <li><a routerLink="/app-home/app-pole-estimate-update" routerLinkActive="active-link"><b>UPDATE POLE ESTIMATE (11KV)</b></a></li>
+    <li><a routerLink="/app-home/app-pole-estimate-update" routerLinkActive="active-link"><b>UPDATE POLE ESTIMATE (33KV)</b></a></li>
+    <li><a routerLink="/app-home/app-estimate-detail" routerLinkActive="active-link"><b>ESTIMATE VIEW </b></a></li>
+    <li><a routerLink="/app-login" routerLinkActive="active-link"><b>LOG OUT </b></a></li>
+  </ul>
+</div>
 
-    <!-- Sidebar -->
-    <div class="col-md-2 sidebar bg-dark text-white min-vh-100" [class.d-none]="sidebarCollapsed" id="sidebar">
-      <div class="sticky-top">
-        <div class="text-center mb-4 pt-3">
-          <div class="d-flex align-items-center justify-content-center mb-2">
-            <img src="../../assets/logo/mpwzlogo.png" alt="MPWZ Logo" width="40" height="40" class="me-2">
-            <h5 class="fw-bold mb-0">MPWZ GIS</h5>
-          </div>
-        </div>
-        <hr class="border-light mx-3">
-        <ul class="nav flex-column nav-pills gap-2 px-3">
-          <li class="nav-item">
-            <a routerLink="/app-dashboard"  class="nav-link text-white">
-              <i class="bi bi-speedometer2 me-2"></i>DASHBOARD
-            </a>
-          </li>
-          <li class="nav-item">
-            <a routerLink="/app-mapdashboard"  class="nav-link text-white">
-              <i class="bi bi-map me-2"></i>SUBSTATION MAP
-            </a>
-          </li>
-          <li class="nav-item">
-            <a routerLink="/app-test"  class="nav-link text-white">
-              <i class="bi bi-lightning-charge me-2"></i>FEEDER MAP (11KV)
-            </a>
-          </li>
-          <li class="nav-item">
-            <a routerLink=""  class="nav-link text-white">
-              <i class="bi bi-lightning-charge-fill me-2"></i>FEEDER MAP (33KV)
-            </a>
-          </li>
-          <li class="nav-item">
-            <a routerLink="/app-workdetails"  class="nav-link text-white">
-              <i class="bi bi-clipboard-data me-2"></i>WORK DETAIL
-            </a>
-          </li>
-          <li class="nav-item">
-            <a routerLink="/app-embdata"  class="nav-link text-white">
-              <i class="bi bi-database me-2"></i>EMB DATA
-            </a>
-          </li>
-          <li class="nav-item">
-            <a routerLink="/app-pole-estimate-update"  class="nav-link text-white">
-              <i class="bi bi-pencil-square me-2"></i>UPDATE MAP
-            </a>
-          </li>
-          <li class="nav-item">
-            <a routerLink="/"  class="nav-link text-white">
-              <i class="bi bi-calculator me-2"></i>ESTIMATE MAP
-            </a>
-          </li>
-        </ul>
-      </div>
+<!-- <nav class="navbar navbar-expand-lg custom-navbar px-3">
+  <div class="d-flex align-items-center">
+    <img src="assets/logo.jpg" alt="Logo" height="70" class="me-3" />
+  <span class="navbar-brand mb-0 h5  position-absolute top-50 start-50 translate-middle">
+   <b> <h3>Madhya Pradesh Paschim Kshetra Vidyut Vitran Company Ltd. - INDORE</h3></b>
+  </span>
+  </div> -->
+
+  <!-- <div class="ms-auto text-end text-white">
+    <div>
+      Hi, <strong>ipds_admin</strong>
+      <img src="assets/user.png" alt="User" class="rounded-circle ms-2" height="24" width="24" />
     </div>
+    <small>Last Login: <strong>18/07/2025 11:55:28</strong></small>
+  </div> -->
+<!-- </nav> -->
 
-    <!-- Main Content -->
-    <div class="col-md-10 bg-light" [class.col-md-12]="sidebarCollapsed">
-      <!-- Top Header -->
-      <div class="header d-flex justify-content-between align-items-center bg-dark text-white px-4 py-3">
-        <!-- <h5 class="mb-0">M.P.P.K.V.V.C.L INDORE</h5> -->
-        <button class="btn btn-outline-light d-md-none d-lg-block" (click)="toggleSidebar()">
-          <i class="bi" [class.bi-arrow-left-square]="!sidebarCollapsed" [class.bi-arrow-right-square]="sidebarCollapsed">
-          <span class="visually-hidden">Toggle sidebar</span>
-          
-          </i>
-        </button>
-      </div>
 
-      <!-- Router Outlet -->
-      <div class="p-3">
-        <router-outlet></router-outlet>
-      </div>
-    </div>
-  </div>
+<!-- Main Content Area -->
+<div class="content">
+  <router-outlet></router-outlet>
 </div>

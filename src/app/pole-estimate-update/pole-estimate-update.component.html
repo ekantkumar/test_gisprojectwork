@@ -3,7 +3,7 @@
 
   <div class="form-row">
     <div class="form-group">
-      <label for="region">Region</label>
+      <label for="region"><b>Region</b></label>
       <select id="region" [(ngModel)]="selectedRegion" (change)="onRegionChange()">
         <option value="" disabled>Select Region</option>
         <option *ngFor="let region of regions" [value]="region">{{ regionDisplayMap[region] }}</option>
@@ -11,7 +11,7 @@
     </div>
 
     <div class="form-group">
-      <label for="circle">Circle</label>
+      <label for="circle"><b>Circle</b></label>
       <select id="circle" [(ngModel)]="selectedCircle" (change)="onCircleChange()" [disabled]="!circles.length">
         <option value="" disabled>Select Circle</option>
         <option *ngFor="let circle of circles" [value]="circle.circleCode">
@@ -21,7 +21,7 @@
     </div>
 
     <div class="form-group">
-      <label for="division">Division</label>
+      <label for="division"><b>Division</b></label>
       <select id="division" [(ngModel)]="selectedDivision" (change)="onDivisionChange()" [disabled]="!divisions.length">
         <option value="" disabled>Select Division</option>
         <option *ngFor="let division of divisions" [value]="division.divisionCode">
@@ -31,7 +31,7 @@
     </div>
 
     <div class="form-group">
-      <label for="dc">DC</label>
+      <label for="dc"><b>DC</b></label>
       <select id="dc" [(ngModel)]="selectedDC" [disabled]="!dcs.length">
         <option value="" disabled>Select DC</option>
         <option *ngFor="let dc of dcs" [value]="dc.distributionCenterCode">{{ dc.distributionCenterName }}</option>
@@ -85,22 +85,17 @@
           <td>{{ feeder.kv_11_line_loss_p || 'N/A' }}</td>
           <td>{{ feeder.consumer_count }}</td>
           <td>
-
             <button class="btn btn-primary" (click)="viewMap(feeder)">GET POLES</button><br>
-         
-
-
           </td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div id="map" style="height: 700px; width:100%; margin-top: 20px;"></div>
-      </div>
+ 
+     
+        <div id="map" style="height: 900px; width:100%; margin-top: 20px;"></div>
+     
 
       <!-- <div *ngIf="poles.length > 0" class="table-responsive mt-4">
         <h4>Poles/DTRs List</h4>
@@ -131,5 +126,5 @@
         </table>
       </div> -->
 
-      <div class="col-md-6"></div>
+    
     </div>

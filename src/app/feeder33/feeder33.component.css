@@ -1,5 +1,5 @@
 .dashboard-container {
-  max-width: 100%;
+  max-width: 90%;
   margin: 20px auto;
   padding: 24px;
   background: #ffffff;
@@ -54,11 +54,14 @@ select:focus {
   outline: none;
 }
 
-.form-group {
+ .form-group {
   flex: 1 1 22%;
   display: flex;
   flex-direction: column;
   min-width: 180px;
+     /* centers items horizontally */
+  justify-content: center;  /* optional: centers vertically if height allows */
+  text-align: center;
 }
 
 .form-group {
@@ -73,19 +76,7 @@ select:focus {
   justify-content: flex-end;
 }
 
-/* .search-btn {
-  margin-top: 20px;
-  margin-left: 490px;
-  width: 10%;
-  padding: 12px;
-  background-color: #2a6db4;
-  border: none;
-  border-radius: 6px;
-  color: rgb(245, 242, 242);
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-} */
+
 
 .search-btn {
   width: 100%; /* take full width of its container */
@@ -98,6 +89,8 @@ select:focus {
   cursor: pointer;
   transition: background-color 0.3s;
 }
+
+
 
 
 

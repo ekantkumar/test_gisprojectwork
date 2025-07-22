@@ -27,7 +27,6 @@ export class Feeder11Service {
 
   getRapdrpDTRMapview(body: any): Observable<any[]> {
     return this.http.post<any[]>('http://10.98.7.167:8080/getRapdrpDTRMapview', body);
-    // return this.http.post<any[]>('http://10.98.7.167:8080/getRapdrpPole11kvMapview', body);
   }
 
   updatePoleEstimate(body: { code_of_feeder: string, pole_code: string, estimateno: string }): Observable<any> {

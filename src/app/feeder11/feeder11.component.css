@@ -1,5 +1,5 @@
 .dashboard-container {
-  max-width: 1280px;
+  max-width: 90%;
   margin: 20px auto;
   padding: 24px;
   background: #ffffff;
@@ -150,21 +150,4 @@ select:focus {
 .table td {
   vertical-align: middle;
   font-size: 14px;
-}
-
-.dashboard-container {
-  background: #fdfdfd;
-  padding: 20px;
-}
-
-.table th, .table td {
-  font-size: 0.875rem;
-  vertical-align: middle;
-}
-
-.responsive-map {
-  height: 600px;
-  width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 8px;
 }

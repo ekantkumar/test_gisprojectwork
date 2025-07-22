@@ -3,15 +3,15 @@
 
   <div class="form-row">
     <div class="form-group">
-      <label for="region">Region</label>
+      <label for="region"><b>Region</b></label>
       <select id="region" [(ngModel)]="selectedRegion" (change)="onRegionChange()">
-        <option value="" disabled >Select Region</option>
+        <option value="" disabled ><b>Select Region</b></option>
         <option *ngFor="let region of regions" [value]="region">{{ regionDisplayMap[region] }}</option>
       </select>
     </div>
 
     <div class="form-group">
-      <label for="circle">Circle</label>
+      <label for="circle"><b>Circle</b></label>
       <select id="circle" [(ngModel)]="selectedCircle" (change)="onCircleChange()" [disabled]="!circles.length">
         <option value="" disabled>Select Circle</option>
         <option *ngFor="let circle of circles" [value]="circle.circleCode">
@@ -21,7 +21,7 @@
     </div>
 
     <div class="form-group">
-      <label for="division">Division</label>
+      <label for="division"><b>Division</b></label>
       <select id="division" [(ngModel)]="selectedDivision" (change)="onDivisionChange()" [disabled]="!divisions.length">
         <option value="" disabled>Select Division</option>
         <option *ngFor="let division of divisions" [value]="division.divisionCode">
@@ -31,9 +31,9 @@
     </div>
 
     <div class="form-group">
-      <label for="dc">DC</label>
+      <label for="dc"><b>DC/ZONE</b></label>
       <select id="dc" [(ngModel)]="selectedDC" [disabled]="!dcs.length">
-        <option value="" disabled>Select DC</option>
+        <option value="" disabled>DC</option>
         <option *ngFor="let dc of dcs" [value]="dc.distributionCenterCode">{{ dc.distributionCenterName }}</option>
       </select>
     </div>
@@ -53,11 +53,9 @@
         <th>S.No.</th>
         <th>Circle Name</th>
         <th>Division Name</th>
-        <th>33/11 KV S/s Name</th>
-        <th>11 KV Feeder Code</th>
-        <th>11 KV Feeder Name</th>
-        <th>Total No. of DTR</th>
-        <th>Total DTR Capacity in KVA</th>
+        <th>EHV S/s Name</th>
+        <th>33 KV Feeder Code</th>
+        <th>33 KV Feeder Name</th>
         <th>Feeder Length (Existing in KMs)</th>
         <th>Feeder Length (Proposed in KMs)</th>
         <th>% Voltage Regulations (VR)</th>
@@ -75,8 +73,6 @@
         <td>{{ feeder.kv_11_33_11_ss_name }}</td>
         <td>{{ feeder.kv_11_feeder_code }}</td>
         <td>{{ feeder.kv_11_feeder_name }}</td>
-        <td>{{ feeder.kv_11_total_no_of_dtr }}</td>
-        <td>{{ feeder.total_dtr_capacity_in_kva }}</td>
         <td>{{ feeder.kv_11_feeder_length_in_kms_existing }}</td>
         <td>{{ feeder.kv_11_feeder_length_in_kms_proposed }}</td>
         <td>{{ feeder.kv_11_p_voltage_regulations_vr || 'N/A' }}</td>
@@ -95,7 +91,8 @@
   </table>
 </div>
  
-<div id="map" style="height: 800px; width:100%; margin-top: 20px;"></div>
+<!-- <div id="map" style="height: 850px; width:100%; margin-top: 40px;"></div> -->
+<div id="map" style="height: 850px; width:100%; margin-top: 40px; padding: 20px;"></div>
    
 </div>
 

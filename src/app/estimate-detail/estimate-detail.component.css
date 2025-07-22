@@ -13,8 +13,9 @@
 
 
 .container {
-  max-width: 100%;
-  margin: 30px auto;
+  max-width: 95%;
+  margin: 50px auto;
+  margin-left: 100px;
   display: block;
   padding: 0 16px;
 }

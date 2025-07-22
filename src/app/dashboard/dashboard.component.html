@@ -1,81 +1,103 @@
-<div class="container-fluid dashboard-container py-3">
-  <h2 class="text-center mb-4">DASHBOARD</h2>
 
-  <!-- Filters -->
-  <div class="row g-3">
-    <div class="col-sm-6 col-md-3">
-      <label for="region" class="form-label">Region</label>
-      <select id="region" [(ngModel)]="selectedRegion" (change)="onRegionChange()" class="form-select">
+<div class="dashboard-container">
+  <h2>DASHBOARD</h2>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="region"><b>Region</b></label>
+      <select id="region" [(ngModel)]="selectedRegion" (change)="onRegionChange()">
         <option value="" disabled selected>Select Region</option>
         <option *ngFor="let region of regions" [value]="region">{{ regionDisplayMap[region] }}</option>
       </select>
     </div>
 
-    <div class="col-sm-6 col-md-3">
-      <label for="circle" class="form-label">Circle</label>
-      <select id="circle" [(ngModel)]="selectedCircle" (change)="onCircleChange()" [disabled]="!circles.length" class="form-select">
+    <div class="form-group">
+      <label for="circle"><b>Circle</b></label>
+      <select id="circle" [(ngModel)]="selectedCircle" (change)="onCircleChange()" [disabled]="!circles.length">
         <option value="" disabled>Select Circle</option>
-        <option *ngFor="let circle of circles" [value]="circle.circleCode">{{ circle.circleName }}</option>
+        <option *ngFor="let circle of circles" [value]="circle.circleCode">
+          {{ circle.circleName }}
+        </option>
       </select>
     </div>
 
-    <div class="col-sm-6 col-md-3">
-      <label for="division" class="form-label">Division</label>
-      <select id="division" [(ngModel)]="selectedDivision" (change)="onDivisionChange()" [disabled]="!divisions.length" class="form-select">
+    <div class="form-group">
+      <label for="division"><b>Division</b></label>
+      <select id="division" [(ngModel)]="selectedDivision" (change)="onDivisionChange()" [disabled]="!divisions.length">
         <option value="" disabled selected>Select Division</option>
-        <option *ngFor="let division of divisions" [value]="division.divisionCode">{{ division.divisionName }}</option>
+        <option *ngFor="let division of divisions" [value]="division.divisionCode">
+          {{ division.divisionName }}
+        </option>
       </select>
     </div>
 
-    <div class="col-sm-6 col-md-3">
-      <label for="dc" class="form-label">Distribution Centre</label>
-      <select id="dc" [(ngModel)]="selectedDC" [disabled]="!dcs.length" class="form-select">
+    <div class="form-group">
+      <label for="dc"><b>DC/ZONE</b></label>
+      <select id="dc" [(ngModel)]="selectedDC" [disabled]="!dcs.length">
         <option value="" disabled selected>Select DC</option>
-        <option *ngFor="let dc of dcs" [value]="dc.distributionCenterCode">{{ dc.distributionCenterName }}</option>
+
+        <option *ngFor="let dc of dcs" [value]="dc.code">{{ dc.name }}</option>
       </select>
     </div>
+
+
   </div>
 
-  <div class="text-center my-3">
-    <button class="btn btn-primary px-4" (click)="getdashboard()">Search</button>
+  <button class="search-btn" (click)="getdashboard()">Search</button>
+
+  <button class="search-btn" (click)="getapitoken()">API Token</button>
+
+  <div class="dashboard-grid">
+    <!-- Feeders Bar Chart -->
+    <div class="dashboard-card">
+      <h3>No. of Feeders</h3>
+      <br><br>
+      <!-- 👇 Summary -->
+      <!-- <p>33/11 KV S/s: {{ feederSSCount }}</p>
+      <p>33 KV Feeders: {{ feeder33kvCount }}</p>
+      <p>11 KV Feeders: {{ feeder11kvCount }}</p> -->
+
+      <canvas baseChart [data]="feederChartData" [type]="'bar'">
+      </canvas>
+    </div>
+
+    <!-- Line Length Pie Chart -->
+    <div class="dashboard-card">
+      <h3>Length of Electrical Lines in KM</h3><br>
+      <!-- 👇 Summary -->
+      <!-- <p>33 KV Feeder: {{ lineLength33kv }} km</p>
+      <p>11 KV Feeder: {{ lineLength11kv }} km</p>
+      <p>LT Line: {{ lineLengthLT }} km</p> -->
+     
+      <canvas baseChart [data]="lineChartData" [type]="'pie'">
+      </canvas>
+      <!-- <canvas baseChart [data]="undergroundChartData" [type]="'pie'">
+      </canvas> -->
+
+    </div>
+    <br>
+    <!-- Total Transformers -->
+    <div class="dashboard-card">
+      <h3>Total Transformers</h3>
+      <!-- 👇 Summary -->
+      <!-- <p>Total DTRs: {{totalTransformer }}</p> -->
+      <canvas baseChart [data]="dtrChartData" [type]="'pie'">
+      </canvas>
+      
+    </div>
+
+    <!-- <div class="dashboard-card">
+      <h3>Status of JOB</h3> -->
+      <!-- 👇 Summary -->
+      <!-- <p>Jobs Created: {{ jobCreated }}</p>
+      <p>Jobs Assigned: {{ jobAssigned }}</p>
+      <p>Jobs In Progress: {{ jobInProgress }}</p>
+      <p>Jobs Completed: {{ jobCompleted }}</p> -->
+      <!-- <canvas baseChart [data]="jobChartData" [type]="'bar'">
+      </canvas>
+    </div> -->
+
+  </div>
   </div>
 
-  <!-- Charts Grid -->
-  <div class="row g-4">
-    <div class="col-md-6 col-lg-3">
-      <div class="card h-100 shadow-sm">
-        <div class="card-body">
-          <h5 class="card-title text-center">No. of Feeders</h5>
-          <canvas baseChart [data]="feederChartData" [type]="'bar'"></canvas>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-6 col-lg-3">
-      <div class="card h-100 shadow-sm">
-        <div class="card-body">
-          <h5 class="card-title text-center">Line Length (KM)</h5>
-          <canvas baseChart [data]="lineChartData" [type]="'pie'"></canvas>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-6 col-lg-3">
-      <div class="card h-100 shadow-sm">
-        <div class="card-body">
-          <h5 class="card-title text-center">Total Transformers</h5>
-          <canvas baseChart [data]="dtrChartData" [type]="'pie'"></canvas>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-6 col-lg-3">
-      <div class="card h-100 shadow-sm">
-        <div class="card-body">
-          <h5 class="card-title text-center">Status of Job</h5>
-          <canvas baseChart [data]="jobChartData" [type]="'bar'"></canvas>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+ 

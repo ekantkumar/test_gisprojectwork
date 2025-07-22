@@ -3,7 +3,7 @@
   
     <div class="form-row">
       <div class="form-group">
-        <label for="region">Region</label>
+        <label for="region"><b>Region</b></label>
         <select id="region" [(ngModel)]="selectedRegion" (change)="onRegionChange()">
           <option value="" disabled selected>Select Region</option>
           <option *ngFor="let region of regions" [value]="region">{{ regionDisplayMap[region] }}</option>
@@ -11,7 +11,7 @@
       </div>
   
       <div class="form-group">
-        <label for="circle">Circle</label>
+        <label for="circle"><b>Circle</b></label>
         <select id="circle" [(ngModel)]="selectedCircle" (change)="onCircleChange()" [disabled]="!circles.length">
           <option value="" disabled>Select Circle</option>
           <option *ngFor="let circle of circles" [value]="circle.circleCode"> {{ circle.circleName }} </option>
@@ -19,7 +19,7 @@
       </div>
   
       <div class="form-group">
-        <label for="division">Division</label>
+        <label for="division"><b>Division</b></label>
         <select id="division" [(ngModel)]="selectedDivision" (change)="onDivisionChange()" [disabled]="!divisions.length">
           <option value="" disabled selected>Select Division</option>
           <option *ngFor="let division of divisions" [value]="division.divisionCode"> {{ division.divisionName }} </option>
@@ -27,10 +27,9 @@
       </div>
   
       <div class="form-group">
-        <label for="dc">DC</label>
+        <label for="dc"><b>DC/ZONE</b></label>
         <select id="dc" [(ngModel)]="selectedDC" [disabled]="!dcs.length">
           <option value="" disabled selected>Select DC</option>
-  
           <option *ngFor="let dc of dcs" [value]="dc.code">{{ dc.name }}</option>
         </select>
       </div>
@@ -38,8 +37,8 @@
   
     </div>
   
-    <button class="search-btn" (click)="getdashboard()">Search</button>
+    <button class="search-btn" (click)="getmapsubstation()">Search</button>
 
    
 
-    <div id="map" style="height: 800px; width: 100%; margin-top: 20px;"></div>
+    <div id="map" style="height: 850px; width: 100%; margin-top: 20px;"></div>

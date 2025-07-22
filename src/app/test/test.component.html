@@ -1,42 +1,46 @@
 <div class="dashboard-container">
   <h2>11KV FEEDER MAP</h2>
 
-  <div class="row g-3 align-items-end">
-    <div class="col-sm-6 col-md-2">
-      <label for="region" class="form-label">Region</label>
-      <select id="region" [(ngModel)]="selectedRegion" (change)="onRegionChange()" class="form-select">
-        <option value="" disabled>Select Region</option>
+  <div class="form-row">
+    <div class="form-group">
+      <label for="region"><b>Region</b></label>
+      <select id="region" [(ngModel)]="selectedRegion" (change)="onRegionChange()">
+        <option value="" disabled >Select Region</option>
         <option *ngFor="let region of regions" [value]="region">{{ regionDisplayMap[region] }}</option>
       </select>
     </div>
 
-    <div class="col-sm-6 col-md-3">
-      <label for="circle" class="form-label">Circle</label>
-      <select id="circle" [(ngModel)]="selectedCircle" (change)="onCircleChange()" [disabled]="!circles.length" class="form-select">
+    <div class="form-group">
+      <label for="circle"><b>Circle</b></label>
+      <select id="circle" [(ngModel)]="selectedCircle" (change)="onCircleChange()" [disabled]="!circles.length">
         <option value="" disabled>Select Circle</option>
-        <option *ngFor="let circle of circles" [value]="circle.circleCode">{{ circle.circleName }}</option>
+        <option *ngFor="let circle of circles" [value]="circle.circleCode">
+          {{ circle.circleName }}
+        </option>
       </select>
     </div>
 
-    <div class="col-sm-6 col-md-3">
-      <label for="division" class="form-label">Division</label>
-      <select id="division" [(ngModel)]="selectedDivision" (change)="onDivisionChange()" [disabled]="!divisions.length" class="form-select">
+    <div class="form-group">
+      <label for="division"><b>Division</b></label>
+      <select id="division" [(ngModel)]="selectedDivision" (change)="onDivisionChange()" [disabled]="!divisions.length">
         <option value="" disabled>Select Division</option>
-        <option *ngFor="let division of divisions" [value]="division.divisionCode">{{ division.divisionCode }}</option>
+        <option *ngFor="let division of divisions" [value]="division.divisionCode">
+          {{ division.divisionName }}
+        </option>
       </select>
     </div>
 
-    <div class="col-sm-6 col-md-3">
-      <label for="dc" class="form-label">DC</label>
-      <select id="dc" [(ngModel)]="selectedDC" class="form-select">
+    <div class="form-group">
+      <label for="dc"><b>DC/ZONE</b></label>
+      <select id="dc" [(ngModel)]="selectedDC" [disabled]="!dcs.length">
         <option value="" disabled>Select DC</option>
         <option *ngFor="let dc of dcs" [value]="dc.distributionCenterCode">{{ dc.distributionCenterName }}</option>
       </select>
     </div>
+ <div class="form-group search-button-group">
+    <button class="search-btn" (click)="getdashboard()">Search</button>
+  </div>
 
-    <div class="col-12 text-end">
-      <button class="btn btn-primary mt-2" (click)="getdashboard()">Search Data</button>
-    </div>
   </div>
 
 
@@ -90,6 +94,6 @@
   </table>
 </div>
  
-<div id="map" style="height: 800px; width:100%; margin-top: 20px;"></div>
-   
+<div id="map" style="height: 850px; width: 100%; margin-top: 20px;"></div>
+ 
 </div>

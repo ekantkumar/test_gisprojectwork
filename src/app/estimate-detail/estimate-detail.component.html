@@ -18,14 +18,10 @@ class="form-control"/>
   <h2 class="title">ESTIMATE DETAIL MAP</h2>
 
   <div class="form-group">
-    <input
-      type="text"
-      [(ngModel)]="estimateNumber"
-      placeholder="Enter Estimate Number"
-      class="form-control small-input"
-    />
+    <input type="text" [(ngModel)]="estimateNumber" placeholder="Enter Estimate Number"
+      class="form-control small-input" />
     <button (click)="searchEstimate()" class="btn btn-primary search-btn">Search</button>
   </div>
 
-  <div id="map" style="height: 800px; margin-top: 20px;"></div>
+  <div id="map" style="height: 1050px; margin-top: 20px;"></div>
 </div>

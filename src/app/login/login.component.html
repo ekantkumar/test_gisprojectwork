@@ -1,22 +1,29 @@
+<div class="login-background">
+<div class="container">
+  <h2 class="text-center mb-6"><b>GIS LOGIN </b></h2> <br>
+
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group-horizontal">
+      <label for="userid"><b>Username</b> </label>
+      <input type="text" class="form-control form-control-fixed" id="userid" placeholder="Enter Username"
+        [(ngModel)]="userid" name="userid" required>
+    </div>
+    <br>
+    <div class="form-group-horizontal">
+      <label for="password"><b>Password</b></label>
+      <input type="password" class="form-control form-control-fixed" id="password" placeholder="Enter Password"
+        [(ngModel)]="password" name="password" required>
+    </div>
+    <br><br>
 
 
-    <div class="container">
-        <h2 class="text-center mb-4"><b></b></h2>
-      
-        <form (ngSubmit)="onSubmit()"  >
-          <div class="form-group">
-            <label for="userid"><b>Username :</b></label>
-            <input type="text" class="form-control form-control-fixed" id="userid" placeholder="Enter Username" [(ngModel)]="userid" name="userid" required>
-          </div>
-          <div class="form-group">
-            <label for="password"><b>Password</b></label>
-            <input type="password" class="form-control form-control-fixed" id="password" placeholder="Enter Password" [(ngModel)]="password" name="password" required>
-          </div>
-          <br>
-          
-          <button type="submit" class="btn btn-custom btn-block" ><b>Login</b></button>
-          <button type="reset" class="btn btn-secondary btn-block"><b>Reset</b></button>
-          <p class="text-center mt-3"><a href="">Forgot password?</a></p>
-          <!-- <div id="loginError" class="error-message text-center mt-3">{{loginError}}</div> -->
-        </form>
-      </div>
+    <div class="button-group">
+      <button type="submit" class="btn btn-custom btn-block"><b>Login</b></button>
+      <button type="reset" class="btn btn-secondary btn-block"><b>Reset</b></button>
+    </div>
+
+   
+    <p class="text-center mt-3"><a href="" style="color:rgb(43, 45, 46);"><b>Forgot password?</b></a></p>
+  </form>
+</div>
+</div>

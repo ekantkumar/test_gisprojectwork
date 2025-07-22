@@ -27,7 +27,7 @@ throw new Error('Method not implemented.');
   regions = ['1', '2'];
   circles: Circle[] = [];
   divisions: Division[] = [];
-  dcs: DistributionCenter[] = [];
+  dcs: { name: string, code: string }[] = [];
 
   selectedRegion = '';
   selectedCircle = '';
@@ -65,7 +65,6 @@ throw new Error('Method not implemented.');
     this.resetBelow('circle');
     this.mapview.getCircles(this.selectedRegion).subscribe((data: Circle[]) => {
       this.circles = data.filter(circle => circle.regionCode === this.selectedRegion);
-      console.log('Filtered Circles:', this.circles);
     });
   }
 
@@ -73,20 +72,18 @@ throw new Error('Method not implemented.');
     this.resetBelow('division');
     this.mapview.getDivisionsByCircle(this.selectedCircle).subscribe(data => {
       this.divisions = data.filter(division => division.circleCode === this.selectedCircle);
-      console.log('Filtered Divisions:', this.divisions);
     });
   }
 
   onDivisionChange(): void {
     this.resetBelow('dc');
-    this.mapview.getDC(this.selectedDivision).subscribe({
-     next:Response=>{
-      this.dcs=Response;
-     },
-     error:error=>{
-      console.log(error);
-     }
-
+    this.mapview.getDC(this.selectedDivision).subscribe(data => {
+      this.dcs = data
+        .filter(dc => dc.divisionCode === this.selectedDivision)
+        .map(dc => ({
+          name: dc.distributionCenterName,
+          code: dc.distributionCenterCode
+        }));
     });
   }
 
@@ -126,10 +123,10 @@ throw new Error('Method not implemented.');
       console.log('Feeder Count Dashboard:', countData);
     });
 
-      this.http.post<any[]>('http://localhost:8080/getfeederdashbaord', body).subscribe(dashboardData => {
-        this.feederDashboardData = dashboardData;
-        console.log('Feeder Dashboard Table Data:', dashboardData);
-      });
+      // this.http.post<any[]>('http://10.98.7.167:8080/getfeederdashbaord', body).subscribe(dashboardData => {
+      //   this.feederDashboardData = dashboardData;
+      //   console.log('Feeder Dashboard Table Data:', dashboardData);
+      // });
     // 
   }
 

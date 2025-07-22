@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
-import { Circle, Division, PoleData, MapviewService } from '../mapview.service';
-import { ShowmapService, Location } from '../showmap.service';
+import { Circle, Division, PoleData,Location, MapviewService } from '../mapview.service';
+
 
 @Component({
   selector: 'app-embdata',
@@ -33,7 +33,7 @@ export class EmbdataComponent implements OnInit {
   private map: L.Map | undefined;
   private markers: L.Marker[] = [];
 
-  constructor(private mapview: MapviewService, private showmap: ShowmapService) { }
+  constructor(private mapview: MapviewService) { }
 
   ngOnInit(): void {
     this.initMap();
